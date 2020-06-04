@@ -58,6 +58,7 @@
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Libros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                             <li><a href= "'.$LinkRouteAdmin.'admininventory.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo libro</a></li>
+                            <li><a href= "'.$LinkRouteAdmin.'admindigital.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Libro digital</a></li>
                                
                             </ul>
                         </li>
