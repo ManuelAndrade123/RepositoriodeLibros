@@ -16,7 +16,7 @@ if($_FILES['file']['size'] > 0){
     $nombre = $_FILES['file']['name'];
     $ruta = $_FILES['file']['tmp_name'];
     $size = $_FILES['file']['size'];
-    $nombre_libro = ['nombre_libro'];
+    
     
    
     $destino = $carpeta."/".$nombre;
@@ -24,7 +24,7 @@ if($_FILES['file']['size'] > 0){
     if(copy($ruta,$destino)){
         //echo "se guardo correctamente";
    
-        $sql = "INSERT INTO files (nombre,size,nombre_libro)values('$nombre','$size','$nombre_libro')";
+        $sql = "INSERT INTO files (nombre,ruta,size)values('$nombre','$destino','$size')";
         //$resultado = mysql
         $resultado=mysqli_query($conexion,$sql);
    
