@@ -35,7 +35,7 @@
             $checkStudents=ejecutarSQL::consultar("SELECT * FROM estudiante");
             $checkTeachers=ejecutarSQL::consultar("SELECT * FROM docente");
             $checkPersonalA=ejecutarSQL::consultar("SELECT * FROM personal");
-            $checkProviders=ejecutarSQL::consultar("SELECT * FROM proveedor");
+           
             $checkBooks=ejecutarSQL::consultar("SELECT * FROM libro");
             $totalBooks=0;
             while($DBT=mysql_fetch_array($checkBooks)){

@@ -8,70 +8,45 @@ $result=mysqli_query($conexion,$sql);
 
 ?>
 
-<style>
-	table { border: 1px solid #E7E7E7;}
-	td{
-	
-	
-	 text-transform: uppercase;
-	 border: #E7E7E7 1px solid;
-	}
-	td{text-align: center;}
-</style>
-<div  class="table-responsive">
-    <table class="table table-striped"  id="iddatatable">
-        <thead>
-            <tr>
-                <td><b>ID.</b></td>
-                <td><b>Archivo</b></td>
-                <td><b>Nombre Libro</b></td>
-                <td><b>Tamaño</b></td>
-                <td><b>Fecha subida</b></td>
-                <td><b>Descargar</b></td>
-                <td><b>Visualizar</b></td>
-                <td><b>Eliminar</b></td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
+<div class="container-fluid">
+            <h2 class="text-center all-tittles">Lista de categorías</h2>
+            <div class="div-table">
+                <div class="div-table-row div-table-head">
+                    <div class="div-table-cell">#</div>
+                 
+                    <div class="div-table-cell">Nombre del Archivo</div>
+                    <div class="div-table-cell">Tamaño</div>
+                    <div class="div-table-cell">Fecha</div>
+                    <div class="div-table-cell">Descargar</div>
+                    <div class="div-table-cell">Visualizar</div>
+                </div>
+                <div class="div-table-row">
+                     <?php 
 			while ($mostrar=mysqli_fetch_row($result)) {
 			
                 $rutaDescarga =$mostrar[2]."/".$mostrar[1];
 				?>
             <tr>
-                <td><?php echo $mostrar[0] ?></td>
-                <td><?php echo $mostrar[1] ?></td>
-                <td><?php echo $mostrar[2] ?></td>
-                <td><?php echo ($mostrar[3] / 1048576) ?>MB</td>
-                <td><?php echo $mostrar[4] ?></td>
                 
-                
-				<td>
-                    <a href="<?php echo $rutaDescarga ?>" download="<?php echo $mostrar[1] ?>"
-                        class="btn btn-warning btn-sm">
-                        <span class="fa fa-download"></span>
-                </td>
-                <td>
-                    <a href="<?php echo $mostrar[2] ?>" target="_blank"
-                        class="btn btn-primary btn-sm">
-                        <span class="fa fa-eye"></span>
-                </td>
-
-				<a href="<?php echo $mostrar[3] ?>" target="_blank"></a>
-				<td >
-					<span class="btn btn-success btn-sm" data-toggle="modal"  data-target="#modalArchivo" >
-						<span  class="fa fa-pencil-square-o"></span>
-					</span>
-				</td>
+                <div class="div-table-cell"><?php echo $mostrar[0] ?></div>
+                <div class="div-table-cell"><?php echo $mostrar[2] ?></div>
+                <div class="div-table-cell"><?php echo round($mostrar[3] / 1048576) ?>MB</div>
+                <div class="div-table-cell"><?php echo $mostrar[4] ?></div>
+                <div class="div-table-cell">
+                <a  href="<?php echo $rutaDescarga ?>" download="<?php echo $mostrar[1] ?>">
+                <button  class="btn btn-success" >
+                <i class="zmdi zmdi-download"></i>
+                 </a>
+                </div>
+                <div class="div-table-cell">
+                <button class="btn btn-primary"  onclick="location.href='<?php echo $mostrar[2] ?>'"  target="_blank"><i class="zmdi zmdi-eye"></i></div>
             </tr>
             <?php 
 			}
 			?>
-        </tbody>
-    </table>
-    
-    
-</div>
+                </div>
+            </div>
+        </div>
 
 <script type="text/javascript">
 $(document).ready(function() {

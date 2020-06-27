@@ -32,6 +32,7 @@
                 <?php
                     if($_SESSION['UserPrivilege']=='Student'||$_SESSION['UserPrivilege']=='Teacher'||$_SESSION['UserPrivilege']=='Personal'){
                         echo '<li><a href="catalog.php"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Catálogo</a></li>';
+                        echo '<li><a href="catalogdigital.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Libro Digital</a></li>';
                         if($totalR>=1){ echo '<li><a href="reservations.php"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>&nbsp;&nbsp; Reservaciones<span class="label label-danger pull-right label-mhover">'.$totalR.'</span></a></li>'; }
                     }else if($_SESSION['UserPrivilege']=='Admin'){
                         echo '
