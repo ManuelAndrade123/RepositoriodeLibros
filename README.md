@@ -14,6 +14,3 @@ Contraseña: Administrador
 Tipo: Administrador
 
 
-# Redes sociales
-[Facebook](https://www.facebook.com/carlos.alfaro.007)
-[Twitter](https://twitter.com/007CarlosAlfaro)
